@@ -3,19 +3,11 @@ const palindromes = function (string) {
     const stringArray = string.toLowerCase().split(''); // Convert to Array
 
     // Filter out punctuation
-    const filteredArray = stringArray.filter(item => !punctuation.includes(item));
+    const filteredString = stringArray.filter(item => !punctuation.includes(item)).join('');
 
     // Check for palindrome
-    let i = 0;
-    let j = filteredArray.length - 1;
-    while (i < j) {
-        if (filteredArray[i] !== filteredArray[j]) {
-            return false;
-        }
-        i++;
-        j--;
-    }
-    return true;
+    const reversedString = filteredString.split('').reverse().join('');
+    return filteredString === reversedString;
 };
 
 // Do not edit below this line
